@@ -41,14 +41,28 @@
      <img alt="GitHub Release" src="https://img.shields.io/github/v/release/abhinavkumar2369/Random-Quote-Generator">
 </div>
 
+<!------------------------------------------------->
+
+## Overview 🌟
+- A simple website to generate Random Quotes 💫.
+
+<!------------------------------------------------->
 
 ## Screenshot 🖼️
 ![image](https://github.com/user-attachments/assets/3ff61876-8ed6-4da2-a77c-d43cd9ef58d4)
 
+<!------------------------------------------------->
 
 ## Contributions 🧑‍💻
 Contributions are welcome! Please feel free to submit issues and pull requests.
 
+<!------------------------------------------------->
+
+## Credit 👍 
+Images used in project belong to the Websites --->
+- SVG Repo <a href="https://www.svgrepo.com/"> Website </a>
+
+<!------------------------------------------------->
 
 ## License 🪪
 This project is licensed under the [MIT License](LICENSE).
