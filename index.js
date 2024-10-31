@@ -1,4 +1,3 @@
-
 const quotes = [
     {
         text: "The only way to do great work is to love what you do.",
@@ -32,6 +31,41 @@ function displayNewQuote() {
     document.getElementById('author').textContent = `- ${quote.author}`;
 }
 
-document.getElementById('new-quote').addEventListener('click', displayNewQuote);
+function speakQuote() {
+    const quoteText = document.getElementById('quote-text').textContent;
+    const authorText = document.getElementById('author').textContent;
+    const utterance = new SpeechSynthesisUtterance(`${quoteText} by ${authorText}`);
+    speechSynthesis.speak(utterance);
+}
 
-displayNewQuote();
+function copyQuote() {
+    const quoteText = document.getElementById('quote-text').textContent;
+    const authorText = document.getElementById('author').textContent;
+    const textToCopy = `${quoteText} ${authorText}`;
+    
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        alert('Quote copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+
+function tweetQuote() {
+    const quoteText = document.getElementById('quote-text').textContent;
+    const authorText = document.getElementById('author').textContent;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quoteText}" ${authorText}`)}`;
+    window.open(twitterUrl, '_blank');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    document.getElementById('new-quote').addEventListener('click', displayNewQuote);
+
+    document.querySelector('.class').addEventListener('click', speakQuote);
+
+    document.querySelector('.copy').addEventListener('click', copyQuote);
+
+    document.querySelector('.twitter').addEventListener('click', tweetQuote);
+
+    displayNewQuote();
+});
